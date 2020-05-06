@@ -32,7 +32,7 @@ public class JwtController {
                 .isAuthenticated();
 
         if (!isAuthenticated)
-            throw new BadCredentialsException("username or password incorrect");
+            return "username or password incorrect";
 
         UserDetails userDetails =userDetailsService.loadUserByUsername(request.getEmail());
          return jwtUtil.generateToken(userDetails);
