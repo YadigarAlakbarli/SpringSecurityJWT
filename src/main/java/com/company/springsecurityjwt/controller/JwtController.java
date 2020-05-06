@@ -27,7 +27,6 @@ public class JwtController {
 
     @PostMapping("/generatetoken")
     public String generateToken(@RequestBody JwtRequest request) {
-        System.out.println("Hello World");
         boolean isAuthenticated = am.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()))
                 .isAuthenticated();
 
